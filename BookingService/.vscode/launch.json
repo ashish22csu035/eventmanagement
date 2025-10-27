@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch ServicediscoveryApplication",
+            "request": "launch",
+            "mainClass": "com.event.servicediscovery.ServicediscoveryApplication",
+            "projectName": "servicediscovery"
+        }
+    ]
+}
