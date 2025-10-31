@@ -30,9 +30,9 @@ public class EventController {
     private EventService eventService;
 
     /**
-     * ✅ GET /events/all
+     *  GET /events/all
      * Fetch all events from the database.
-     * Example: http://localhost:9001/events/all
+     * Example: http://localhost:9003/events/all
      * Returns: List of all events in JSON format.
      */
     @GetMapping("/all")
@@ -41,9 +41,9 @@ public class EventController {
     }
 
     /**
-     * ✅ GET /events/{id}
+     *  GET /events/{id}
      * Fetch details of a specific event by ID.
-     * Example: http://localhost:9001/events/5
+     * Example: http://localhost:9003/events/5
      * Returns: Event details (JSON) for the given ID, or error if not found.
      */
     @GetMapping("/{id}")
@@ -52,9 +52,9 @@ public class EventController {
     }
 
     /**
-     * ✅ GET /events/{id}/name
+     *  GET /events/{id}/name
      * Fetch only the event name by ID (for microservice communication).
-     * Example: http://localhost:9001/events/4/name
+     * Example: http://localhost:9003/events/4/name
      * Returns: Event name as a plain String.
      */
     @GetMapping("/{id}/name")
@@ -69,10 +69,10 @@ public class EventController {
     }
 
     /**
-     * ✅ POST /events/add
+     *  POST /events/add
      * Create (add) a new event into the database.
      * Example: 
-     *   POST http://localhost:9001/events/add
+     *   POST http://localhost:9003/events/add
      *   Body (JSON):
      *   {
      *       "eventName": "Music Festival",
@@ -89,9 +89,9 @@ public class EventController {
     }
 
     /**
-     * ✅ DELETE /events/delete/{id}
+     *  DELETE /events/delete/{id}
      * Delete an event by its ID.
-     * Example: http://localhost:9001/events/delete/5
+     * Example: http://localhost:9003/events/delete/5
      * Returns: A confirmation message if successfully deleted, or an error if not found.
      */
     @DeleteMapping("/delete/{id}")
@@ -101,10 +101,10 @@ public class EventController {
     }
 
     /**
-     * 🧩 (Optional) PUT /events/update/{id}
+     *  (Optional) PUT /events/update/{id}
      * Update an existing event by ID.
      * Example:
-     *   PUT http://localhost:9001/events/update/5
+     *   PUT http://localhost:9003/events/update/5
      *   Body (JSON):
      *   {
      *       "eventName": "Updated Event",
