@@ -10,8 +10,8 @@ public class UserRestClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    // ✅ Update URL according to your UserService port
-    private static final String USER_SERVICE_URL = "http://localhost:9002/users";
+    // ✅ FIXED: Use service name instead of localhost
+    private static final String USER_SERVICE_URL = "http://USERSERVICE/users";
 
     public String getUsernameById(int userId) {
         try {

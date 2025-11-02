@@ -10,8 +10,8 @@ public class EventRestClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    // ✅ Update URL according to your EventService port
-    private static final String EVENT_SERVICE_URL = "http://localhost:9003/events";
+    // ✅ FIXED: Use service name instead of localhost
+    private static final String EVENT_SERVICE_URL = "http://EVENTSERVICE/events";
 
     public String getEventNameById(int eventId) {
         try {
