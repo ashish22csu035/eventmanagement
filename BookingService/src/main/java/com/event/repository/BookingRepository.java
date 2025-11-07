@@ -9,12 +9,11 @@ import org.springframework.stereotype.Repository;
 import com.event.irepository.IBookingRepository;
 import com.event.model.Booking;
 
-
 @Repository
 public class BookingRepository implements IBookingRepository {
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;//jdbc object ko class me inject kardiya using @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public int save(Booking booking) {
@@ -57,5 +56,26 @@ public class BookingRepository implements IBookingRepository {
                 booking.getBookingDate(),
                 booking.getStatus(),
                 booking.getBookingId());
+    }
+
+    // ✅ NEW METHOD: Get paginated bookings
+    @Override
+    public List<Booking> findAllPaginated(int page, int size) {
+        int offset = page * size;
+        String sql = "SELECT * FROM bookings LIMIT ? OFFSET ?";
+        return jdbcTemplate.query(sql, new BookingRowMapper(), size, offset);
+    }
+
+    // ✅ NEW METHOD: Count total bookings
+    @Override
+    public int countAll() {
+        String sql = "SELECT COUNT(*) FROM bookings";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        return count != null ? count : 0;
+    }
+
+    public List<Booking> getBookingsInRange(String startDate, String endDate) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getBookingsInRange'");
     }
 }

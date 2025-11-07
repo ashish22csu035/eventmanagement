@@ -28,6 +28,7 @@ public class ConfigurationserverApplication {
         } else {
             app.setAdditionalProfiles("git");
         }
+        app.setAdditionalProfiles("native");
         app.run(args);
     }
 

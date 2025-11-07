@@ -15,7 +15,7 @@ public class SecurityConfig {
         http
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/events/**").permitAll()  // Allow all event endpoints
+                .requestMatchers("/events/**").permitAll()  
                 .anyRequest().authenticated()
             )
             .httpBasic();

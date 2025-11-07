@@ -1,9 +1,0 @@
-com\event\config\ApplicationConfig.class
-com\event\controller\EventController.class
-com\event\repository\EventRowMapper.class
-com\event\EventServiceApplication.class
-com\event\dto\EventDto.class
-com\event\model\Event.class
-com\event\service\EventService.class
-com\event\irepository\IEventRepository.class
-com\event\repository\EventRepository.class

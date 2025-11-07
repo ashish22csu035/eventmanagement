@@ -5,6 +5,9 @@ import java.util.List;
 import com.event.model.Booking;
 
 public interface IBookingRepository {
+    // ✅ ADD THESE NEW METHODS FOR PAGINATION
+    List<Booking> findAllPaginated(int page, int size);
+    int countAll();
 
     // Save a new booking
     int save(Booking booking);
